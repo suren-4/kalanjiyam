@@ -2,78 +2,155 @@
 
 A modern web application for exploring, documenting, and sharing archaeological artifacts and historical heritage.
 
-## Project Overview
+---
 
+## 📌 Project Overview
 Heritage Portal is a platform that connects archaeologists, historians, and enthusiasts to explore and document archaeological artifacts. The application provides a user-friendly interface for browsing artifacts, viewing detailed information, and contributing to the archaeological knowledge base.
 
-## Features
+---
 
-- **Artifact Exploration**: Browse through a collection of archaeological artifacts with pagination and search functionality
-- **Detailed Artifact Views**: View comprehensive information about each artifact including period, location, material, and cultural significance
-- **User Authentication**: Secure login and registration system
-- **Responsive Design**: Fully responsive interface that works on desktop and mobile devices
-- **Search Functionality**: Find artifacts by title, description, period, location, or culture
+## ✨ Features
+✅ **Artifact Exploration** – Browse through a collection of archaeological artifacts with pagination and search functionality.  
+✅ **Detailed Artifact Views** – View comprehensive information about each artifact, including period, location, material, and cultural significance.  
+✅ **User Authentication** – Secure login and registration system.  
+✅ **Responsive Design** – Fully responsive interface that works on desktop and mobile devices.  
+✅ **Search Functionality** – Find artifacts by title, description, period, location, or culture.  
 
-## Technology Stack
+---
 
-### Frontend
-- React.js
-- React Router for navigation
-- CSS for styling
-- Responsive design principles
+## 🛠️ Technology Stack
 
-### Backend
-- Supabase for database and authentication
-  - PostgreSQL database
-  - Authentication services
-- Cloudinary for image storage and management
+### **Frontend**
+- ⚛️ React.js
+- 🚀 React Router for navigation
+- 🎨 CSS for styling
+- 📱 Responsive design principles
+
+### **Backend**
+- 🔥 Supabase for database and authentication
+- 🛢️ PostgreSQL database
+- 🔑 Authentication services
+- ☁️ Cloudinary for image storage and management
   - Cloud-based image hosting
   - Image optimization and transformation
   - Secure delivery
 
-## Project Structure
+---
 
-# Getting Started with Create React App
+## 📂 Code Structure & Dependencies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project follows a structured directory layout:
 
-## Available Scripts
+```plaintext
+HeritagePortal/
+├── public/           # Static assets
+├── src/
+│   ├── components/   # Reusable components (Navbar, Footer, etc.)
+│   ├── pages/        # Page components (Home, Artifact Details, Login, etc.)
+│   ├── services/     # API and database interaction logic
+│   ├── assets/       # Images and static resources
+│   ├── styles/       # Global and component-specific styles
+│   ├── App.js        # Main application entry point
+│   ├── index.js      # ReactDOM entry point
+├── package.json      # Dependencies and scripts
+├── .env              # Environment variables
+├── README.md         # Documentation
+```
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📦 Dependencies
+Below is the complete list of dependencies from `package.json`:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```json
+{
+  "dependencies": {
+    "@cloudinary/react": "^1.14.1",
+    "@cloudinary/url-gen": "^1.21.0",
+    "@supabase/supabase-js": "^2.x.x",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.x.x",
+    "eslint-plugin-react": "^7.x.x"
+  }
+}
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Setup & Execution Steps
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔹 Prerequisites
+- Node.js installed
+- Supabase account set up
+- Cloudinary account for image storage
 
-### `npm run build`
+### 🔹 Installation
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/HeritagePortal.git
+    cd HeritagePortal
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies:
+    ```sh
+    npm install
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Set up environment variables:  
+   Create a `.env` file in the root directory and add the following:
+    ```sh
+    REACT_APP_SUPABASE_URL=your_supabase_url
+    REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
+    REACT_APP_CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🔹 Running the Application
+#### **Frontend**
+To start the development server:
+```sh
+npm start
+```
+This runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm run eject`
+#### **Backend (Supabase Configuration)**
+Since Supabase is a backend-as-a-service platform, ensure your Supabase project is correctly configured with:
+- Database schema for artifacts (tables: `artifacts`, `users`)
+- Authentication settings enabled
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🔹 Building for Production
+To create an optimized production build:
+```sh
+npm run build
+```
+The build files will be available in the `build/` directory, ready for deployment.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🎯 Expected Output and Technical Details
+- Users can browse, search, and explore artifacts with detailed views.
+- Secure authentication ensures only registered users can contribute.
+- Artifacts are displayed with optimized images using Cloudinary.
+- The application adapts to different screen sizes.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
+## 📌 Additional Requirements & Considerations
+✅ Ensure Supabase API keys are stored securely.  
+✅ Optimize Cloudinary usage to reduce bandwidth costs.  
+✅ Implement proper error handling for API requests.  
+✅ Consider adding role-based access control for contributors and administrators.  
+
+---
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
