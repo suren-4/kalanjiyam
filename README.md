@@ -43,8 +43,10 @@ The project follows a structured directory layout:
 
 ```plaintext
 HeritagePortal/
-├── public/           # Static assets
-├── src/
+│── .vscode/          # VS Code settings
+│── backend/          # Backend services and APIs
+│── public/           # Static assets
+│── src/
 │   ├── components/   # Reusable components (Navbar, Footer, etc.)
 │   ├── pages/        # Page components (Home, Artifact Details, Login, etc.)
 │   ├── services/     # API and database interaction logic
@@ -52,9 +54,15 @@ HeritagePortal/
 │   ├── styles/       # Global and component-specific styles
 │   ├── App.js        # Main application entry point
 │   ├── index.js      # ReactDOM entry point
-├── package.json      # Dependencies and scripts
-├── .env              # Environment variables
-├── README.md         # Documentation
+│── .env              # Environment variables
+│── .gitattributes    # Git configuration
+│── .gitignore        # Ignored files
+│── .npmrc            # npm configuration
+│── package.json      # Dependencies and scripts
+│── package-lock.json # Dependency lock file
+│── yarn.lock         # Yarn lock file
+│── README.md         # Documentation
+
 ```
 
 ---
