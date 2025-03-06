@@ -29,6 +29,7 @@ Kalanjiyam is a platform that connects archaeologists, historians, and enthusias
 ### **Backend**
 - 🔥 Supabase for database and authentication
 - ☁️ Cloudinary for image storage and management
+- 🔍 Real-ESRGAN for image upscaling
 - Cloud-based image hosting
 - Image optimization and transformation
 
