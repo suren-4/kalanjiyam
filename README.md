@@ -138,7 +138,7 @@ Since Supabase is a backend-as-a-service platform, ensure your Supabase project 
 ### 🔹 Building for Production
 To create an optimized production build:
 ```sh
-npm run build
+npm yarn build
 ```
 The build files will be available in the `build/` directory, ready for deployment.
 
