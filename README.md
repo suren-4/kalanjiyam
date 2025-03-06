@@ -24,7 +24,6 @@ Kalanjiyam is a platform that connects archaeologists, historians, and enthusias
 - ⚛️ React.js
 - 🚀 React Router for navigation
 - 🌟 CSS for styling
-- 🔍 Real-ESRGAN for image upscaling
 
 ### **Backend**
 - 🔥 Supabase for database and authentication
