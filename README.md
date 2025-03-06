@@ -1,11 +1,11 @@
-# Heritage Portal
+# Kalanjiyam
 
 A modern web application for exploring, documenting, and sharing archaeological artifacts and historical heritage.
 
 ---
 
 ## 📌 Project Overview
-Heritage Portal is a platform that connects archaeologists, historians, and enthusiasts to explore and document archaeological artifacts. The application provides a user-friendly interface for browsing artifacts, viewing detailed information, and contributing to the archaeological knowledge base.
+Kalanjiyam is a platform that connects archaeologists, historians, and enthusiasts to explore and document archaeological artifacts. The application provides a user-friendly interface for browsing artifacts, viewing detailed information, and contributing to the archaeological knowledge base.
 
 ---
 
@@ -42,7 +42,7 @@ Heritage Portal is a platform that connects archaeologists, historians, and enth
 The project follows a structured directory layout:
 
 ```plaintext
-HeritagePortal/
+Kalanjiyam/
 │── .vscode/          # VS Code settings
 │── backend/          # Backend services and APIs
 │── public/           # Static assets
@@ -62,7 +62,6 @@ HeritagePortal/
 │── package-lock.json # Dependency lock file
 │── yarn.lock         # Yarn lock file
 │── README.md         # Documentation
-
 ```
 
 ---
@@ -105,13 +104,13 @@ Below is the complete list of dependencies from `package.json`:
 ### 🔹 Installation
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/HeritagePortal.git
-    cd HeritagePortal
+    git clone https://github.com/yourusername/Kalanjiyam.git
+    cd Kalanjiyam
     ```
 
-2. Install dependencies:
+2. Install dependencies using Yarn:
     ```sh
-    npm install
+    yarn install
     ```
 
 3. Set up environment variables:  
@@ -126,7 +125,7 @@ Below is the complete list of dependencies from `package.json`:
 #### **Frontend**
 To start the development server:
 ```sh
-npm start
+yarn start
 ```
 This runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -138,7 +137,7 @@ Since Supabase is a backend-as-a-service platform, ensure your Supabase project 
 ### 🔹 Building for Production
 To create an optimized production build:
 ```sh
-npm yarn build
+yarn build
 ```
 The build files will be available in the `build/` directory, ready for deployment.
 
@@ -159,32 +158,3 @@ The build files will be available in the `build/` directory, ready for deploymen
 ✅ Consider adding role-based access control for contributors and administrators.  
 
 ---
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
