@@ -13,8 +13,8 @@ Kalanjiyam is a platform that connects archaeologists, historians, and enthusias
 ✅ **Artifact Exploration** – Browse through a collection of archaeological artifacts with pagination and search functionality.  
 ✅ **Detailed Artifact Views** – View comprehensive information about each artifact, including period, location, material, and cultural significance.  
 ✅ **User Authentication** – Secure login and registration system.  
-✅ **Responsive Design** – Fully responsive interface that works on desktop and mobile devices.  
 ✅ **Search Functionality** – Find artifacts by title, description, period, location, or culture.  
+✅ **Feature Image Upscaling** – Enhance image resolution using AI-powered upscaling with Real-ESRGAN.  
 
 ---
 
@@ -23,17 +23,17 @@ Kalanjiyam is a platform that connects archaeologists, historians, and enthusias
 ### **Frontend**
 - ⚛️ React.js
 - 🚀 React Router for navigation
-- 🎨 CSS for styling
-- 📱 Responsive design principles
+- 🌟 CSS for styling
+- 🔍 Real-ESRGAN for image upscaling
 
 ### **Backend**
 - 🔥 Supabase for database and authentication
-- 🛢️ PostgreSQL database
+- 🟢 PostgreSQL database
 - 🔑 Authentication services
 - ☁️ Cloudinary for image storage and management
-  - Cloud-based image hosting
-  - Image optimization and transformation
-  - Secure delivery
+- Cloud-based image hosting
+- Image optimization and transformation
+- Secure delivery
 
 ---
 
@@ -43,30 +43,30 @@ The project follows a structured directory layout:
 
 ```plaintext
 Kalanjiyam/
-│── .vscode/          # VS Code settings
-│── backend/          # Backend services and APIs
-│── public/           # Static assets
-│── src/
-│   ├── components/   # Reusable components (Navbar, Footer, etc.)
-│   ├── pages/        # Page components (Home, Artifact Details, Login, etc.)
-│   ├── services/     # API and database interaction logic
-│   ├── assets/       # Images and static resources
-│   ├── styles/       # Global and component-specific styles
-│   ├── App.js        # Main application entry point
-│   ├── index.js      # ReactDOM entry point
-│── .env              # Environment variables
-│── .gitattributes    # Git configuration
-│── .gitignore        # Ignored files
-│── .npmrc            # npm configuration
-│── package.json      # Dependencies and scripts
-│── package-lock.json # Dependency lock file
-│── yarn.lock         # Yarn lock file
-│── README.md         # Documentation
+|— .vscode/          # VS Code settings
+|— backend/          # Backend services and APIs
+|— public/           # Static assets
+|— src/
+|   ├─ components/   # Reusable components (Navbar, Footer, etc.)
+|   ├─ pages/        # Page components (Home, Artifact Details, Login, etc.)
+|   ├─ services/     # API and database interaction logic
+|   ├─ assets/       # Images and static resources
+|   ├─ styles/       # Global and component-specific styles
+|   ├─ App.js        # Main application entry point
+|   └─ index.js      # ReactDOM entry point
+|— .env              # Environment variables
+|— .gitattributes    # Git configuration
+|— .gitignore        # Ignored files
+|— .npmrc            # npm configuration
+|— package.json      # Dependencies and scripts
+|— package-lock.json # Dependency lock file
+|— yarn.lock         # Yarn lock file
+|— README.md         # Documentation
 ```
 
 ---
 
-## 📦 Dependencies
+## 🛆 Dependencies
 Below is the complete list of dependencies from `package.json`:
 
 ```json
@@ -83,7 +83,8 @@ Below is the complete list of dependencies from `package.json`:
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "real-esrgan": "^1.x.x"
   },
   "devDependencies": {
     "eslint": "^8.x.x",
@@ -147,6 +148,7 @@ The build files will be available in the `build/` directory, ready for deploymen
 - Users can browse, search, and explore artifacts with detailed views.
 - Secure authentication ensures only registered users can contribute.
 - Artifacts are displayed with optimized images using Cloudinary.
+- AI-powered image upscaling enhances artifact visuals.
 - The application adapts to different screen sizes.
 
 ---
