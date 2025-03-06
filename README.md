@@ -28,12 +28,10 @@ Kalanjiyam is a platform that connects archaeologists, historians, and enthusias
 
 ### **Backend**
 - 🔥 Supabase for database and authentication
-- 🟢 PostgreSQL database
-- 🔑 Authentication services
 - ☁️ Cloudinary for image storage and management
 - Cloud-based image hosting
 - Image optimization and transformation
-- Secure delivery
+
 
 ---
 
