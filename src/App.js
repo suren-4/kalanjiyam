@@ -8,6 +8,7 @@ import './App.css';
 import UploadPage from './components/UploadPage/UploadPage';
 import Explorepage from './components/ExplorePage/Explorepage';
 import ArtifactDetailPage from './components/Artifactdetails/ArtifactDetailPage';
+<<<<<<< HEAD
 import LocationPage from './components/LocationPage/LocationPage';
 import Membership from './components/Membership/Membership';
 import MuseumPartnership from './components/MuseumPartnership/MuseumPartnership';
@@ -123,6 +124,8 @@ const BookingConfirmation = () => {
     </div>
   );
 };
+=======
+>>>>>>> 01f96106f45b7a2ca71ef42d9fd917b717373629
 
 function App() {
   return (
@@ -135,10 +138,13 @@ function App() {
         <Route path="/uploadpage" element={<UploadPage />} />
         <Route path="/explore" element={<Explorepage />} />
         <Route path="/artifact/:id" element={<ArtifactDetailPage />} />
+<<<<<<< HEAD
         <Route path="/location/:location" element={<LocationPage />} />
         <Route path="/membership" element={<Membership />} />
         <Route path="/museums" element={<MuseumPartnership />} />
         <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+=======
+>>>>>>> 01f96106f45b7a2ca71ef42d9fd917b717373629
       </Routes>
     </Router>
   );

@@ -36,6 +36,7 @@
     transform: rotate(360deg);
   }
 }
+<<<<<<< HEAD
 
 /* Add this to your App.css file to ensure consistent capitalization */
 button, 
@@ -54,3 +55,5 @@ select {
 .filter-group label {
   text-transform: capitalize;
 }
+=======
+>>>>>>> 01f96106f45b7a2ca71ef42d9fd917b717373629
