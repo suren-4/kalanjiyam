@@ -13,7 +13,8 @@ const MuseumPartnership = () => {
       name: "National Museum of India",
       location: "New Delhi",
       description: "Home to thousands of rare artifacts spanning over 5,000 years of Indian cultural heritage.",
-      image_url: "https://images.unsplash.com/photo-1594215221007-e0d3c7e6f335?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image_url: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+
       artifact_count: 2500,
       rating: 4.8,
       ticket_price: 250,
@@ -34,10 +35,10 @@ const MuseumPartnership = () => {
     },
     {
       id: 3,
-      name: "Archaeological Museum Hampi",
+      name: "Archaeological Museum",
       location: "Karnataka",
       description: "Showcasing the rich cultural heritage of the Vijayanagara Empire with sculptures, coins, and inscriptions.",
-      image_url: "https://images.unsplash.com/photo-1621996659490-3275307d9e90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image_url: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       artifact_count: 1200,
       rating: 4.7,
       ticket_price: 100,

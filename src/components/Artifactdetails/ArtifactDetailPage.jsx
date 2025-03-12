@@ -138,7 +138,6 @@ const ArtifactDetailPage = () => {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
 
       <MuseumPromotion artifactLocation={artifact.location} />
     </div>
@@ -187,8 +186,6 @@ const MuseumPromotion = ({ artifactLocation }) => {
           </div>
         ))}
       </div>
-=======
->>>>>>> 01f96106f45b7a2ca71ef42d9fd917b717373629
     </div>
   );
 };

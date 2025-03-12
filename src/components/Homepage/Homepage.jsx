@@ -52,13 +52,7 @@ const Homepage = () => {
 
   // Function for future use - navigate to location details
   const handleLocationClick = (location) => {
-<<<<<<< HEAD
     navigate(`/location/${encodeURIComponent(location)}`);
-=======
-    // Will be implemented later to show artifacts from this location
-    console.log(`Show artifacts from ${location}`);
-    // navigate(`/artifacts?location=${encodeURIComponent(location)}`);
->>>>>>> 01f96106f45b7a2ca71ef42d9fd917b717373629
   };
 
   return (
@@ -83,15 +77,10 @@ const Homepage = () => {
               </div>
             </div>
           </li>
-<<<<<<< HEAD
           <li><Link to="/login">login</Link></li>
           <li><Link to="/membership">member</Link></li>
           <li><Link to="/about">about</Link></li>
           <li><Link to="/museums">visit</Link></li>
-=======
-          <li><Link to="/about">about</Link></li>
-          <li><Link to="/login">login</Link></li>
->>>>>>> 01f96106f45b7a2ca71ef42d9fd917b717373629
         </ul>
       </nav>
       

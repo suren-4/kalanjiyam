@@ -1,8 +1,8 @@
 .museum-partnership-container {
   min-height: 100vh;
   background-color: #f5f2ed;
-  padding: 2rem;
-  max-width: -webkit-fill-available;
+  padding: 5.5rem;
+  max-width: 100%;
   margin: 0 auto;
   overflow-y: auto;
   position: relative;
@@ -19,14 +19,16 @@
   position: relative;
   z-index: 1;
   margin-top: 0;
+  padding-top: 60rem;
+  padding-left: 20rem;
+  padding-right: 20rem;
 }
 
 .partnership-header h1 {
   font-size: 2.5rem;
+  padding-top: 60rem;
   margin-bottom: 1rem;
   font-weight: 600;
- 
-  padding-top: 120rem;
 }
 
 .partnership-header p {
@@ -151,27 +153,15 @@
 
 .business-model-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-}
-
-@media (max-width: 992px) {
-  .business-model-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .business-model-cards {
-    grid-template-columns: 1fr;
-  }
 }
 
 .model-card {
   background: white;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: center;
   height: 100%;
   display: flex;
@@ -308,6 +298,79 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+}
+
+/* Museum promotion in artifact detail page */
+.museum-promotion {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.museum-promotion h3 {
+  color: #8B6B4E;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.related-museums {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.related-museum-card {
+  background: #f9f7f4;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.related-museum-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.related-museum-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.related-museum-card .museum-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.related-museum-card h4 {
+  color: #8B6B4E;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.related-museum-card p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.related-museum-card button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: #8B6B4E;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.related-museum-card button:hover {
+  background: #a07a59;
 }
 
 /* Make the body and html elements allow scrolling */
