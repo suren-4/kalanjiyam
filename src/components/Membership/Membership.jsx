@@ -31,47 +31,37 @@ const Membership = () => {
     }
   };
 
-  const membershipPlans = [
+  const plans = [
     {
-      type: 'basic',
-      name: 'Sample Tests',
-      price: 'Free!',
+      title: "Basic Explorer",
+      price: "₹999",
+      duration: "/year",
       features: [
-        'Try before you buy',
-        '5 questions per test',
-        'Front-end & back-end tests',
-        'A variety of question formats'
+      
+        "Instant artifact feed access",
+        "Monthly curated collections",
+        "10% discount at museum shop",
+        "Quarterly newsletter subscription",
+        "Live sessions with the Archaelogist"
       ],
-      color: '#8B6B4E',
-      buttonText: 'Try it today'
+      recommended: false
     },
     {
-      type: 'premium',
-      name: 'Post a Job',
-      price: 'Free!',
+      title: "Kalanjiyam Patron",
+      price: "₹2,499",
+      duration: "/year",
       features: [
-        'Advertise specific job board',
-        'Share for 30 days',
-        'Screen and pre-qualify candidates',
-        'Resumes sent by email or via your ATS link'
+    
+        "Instant artifact feed access",
+        "Exclusive excavatory documentaries",
+        "Behind-the-scenes updates",
+        "20% discount at museum shop",
+        "Access to exclusive artifact lectures",
+        "Live sessions with the Archaelogist",
+       
+        "Quarterly artifact magazine",
       ],
-      color: '#8B6B4E',
-      buttonText: 'Post a job',
       recommended: true
-    },
-    {
-      type: 'institution',
-      name: 'Assessment Pack',
-      price: '₹4999/year',
-      features: [
-        'Unlimited invites',
-        '30 days testing access',
-        'Unlimited results access',
-        '30 questions per test',
-        '100% Money Back Guarantee'
-      ],
-      color: '#8B6B4E',
-      buttonText: 'Buy now'
     }
   ];
 
@@ -80,8 +70,8 @@ const Membership = () => {
       <ArrowButton onClick={() => navigate(-1)} />
       
       <div className="membership-header">
-        <h1>Choose a Plan. Uncover Awesome Artifacts.</h1>
-        <p>Get unlimited access to our artifact collection. When you need more details or high-resolution images, just purchase an extension anytime.</p>
+        <h1>Explore Ancient Artifacts Like Never Before</h1>
+        <p>Subscribe to get instant access to our extensive artifact collection with real-time updates and exclusive content.</p>
       </div>
       
       {showDemo ? (
@@ -92,7 +82,7 @@ const Membership = () => {
           </div>
           
           <div className="membership-details">
-            <p><strong>Plan:</strong> {selectedPlan.name}</p>
+            <p><strong>Plan:</strong> {selectedPlan.title}</p>
             <p><strong>Start Date:</strong> {new Date().toLocaleDateString()}</p>
             <p><strong>Renewal Date:</strong> {new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toLocaleDateString()}</p>
           </div>
@@ -105,12 +95,12 @@ const Membership = () => {
         </div>
       ) : (
         <div className="plans-container-horizontal">
-          {membershipPlans.map((plan) => (
+          {plans.map((plan) => (
             <div 
-              key={plan.type} 
-              className={`plan-card-horizontal ${selectedPlan?.type === plan.type ? 'selected' : ''} ${plan.recommended ? 'recommended' : ''}`}
+              key={plan.title} 
+              className={`plan-card-horizontal ${selectedPlan?.title === plan.title ? 'selected' : ''} ${plan.recommended ? 'recommended' : ''}`}
             >
-              <h2 className="plan-name">{plan.name}</h2>
+              <h2 className="plan-name">{plan.title}</h2>
               
               <ul className="plan-features-list">
                 {plan.features.map((feature, index) => (
@@ -120,17 +110,17 @@ const Membership = () => {
                 ))}
               </ul>
               
-              <div className="plan-price-tag">{plan.price}</div>
+              <div className="plan-price-tag">{plan.price} {plan.duration}</div>
               
               <button 
                 className="plan-action-button"
                 onClick={() => handleSubscribe(plan)}
                 disabled={processingPayment}
               >
-                {processingPayment && selectedPlan?.type === plan.type ? (
+                {processingPayment && selectedPlan?.title === plan.title ? (
                   <span className="loading-spinner"></span>
                 ) : (
-                  plan.buttonText
+                  'Subscribe'
                 )}
               </button>
             </div>
@@ -143,33 +133,43 @@ const Membership = () => {
         
         <div className="benefits-grid">
           <div className="benefit-card">
-            <div className="benefit-icon">🔍</div>
-            <h3>Enhanced Access</h3>
-            <p>Gain access to our complete collection of high-resolution artifact images and detailed documentation.</p>
+            <div className="benefit-icon">🔄</div>
+            <h3>Real-Time Updates</h3>
+            <p>Get instant notifications about new artifact discoveries and additions to our collection.</p>
           </div>
           
           <div className="benefit-card">
-            <div className="benefit-icon">📚</div>
-            <h3>Educational Resources</h3>
-            <p>Access exclusive educational materials, research papers, and contextual information about artifacts.</p>
+            <div className="benefit-icon">🎯</div>
+            <h3>Personalized Feed</h3>
+            <p>Receive customized artifact recommendations based on your interests and browsing history.</p>
           </div>
           
           <div className="benefit-card">
-            <div className="benefit-icon">💾</div>
-            <h3>Download & Share</h3>
-            <p>Download artifact information for research, presentations, or educational purposes.</p>
+            <div className="benefit-icon">��️</div>
+            <h3>Exclusive Access</h3>
+            <p>Get special access to curator talks, guided tours, and preview events.</p>
           </div>
           
           <div className="benefit-card">
-            <div className="benefit-icon">🏛️</div>
-            <h3>Support Preservation</h3>
-            <p>Your membership directly supports our efforts to document, preserve, and share India's archaeological heritage.</p>
+            <div className="benefit-icon">📱</div>
+            <h3>Instant Access</h3>
+            <p>Browse and explore artifacts anytime, anywhere through our mobile-friendly platform.</p>
           </div>
         </div>
       </div>
       
       <div className="membership-faq">
         <h2>Frequently Asked Questions</h2>
+        
+        <div className="faq-item">
+          <h3>How soon can I access the artifact feed after subscribing?</h3>
+          <p>Access is instant! As soon as your payment is processed, you'll have immediate access to the artifact feed based on your subscription level.</p>
+        </div>
+        
+        <div className="faq-item">
+          <h3>What's the difference between Basic and Heritage memberships?</h3>
+          <p>While both plans include instant artifact feed access, Heritage Patrons get additional benefits like exclusive content, curator-led tours, behind-the-scenes updates, and special event access.</p>
+        </div>
         
         <div className="faq-item">
           <h3>How will my membership fee be used?</h3>
@@ -189,6 +189,11 @@ const Membership = () => {
         <div className="faq-item">
           <h3>Do you offer discounts for students?</h3>
           <p>Yes, we offer a 30% discount for students with valid ID. Please contact our support team to verify your student status and receive your discount code.</p>
+        </div>
+        
+        <div className="faq-item">
+          <h3>How does the artifact feed work?</h3>
+          <p>All members get instant access to our artifact feed with real-time updates. Heritage Patrons additionally receive exclusive content, behind-the-scenes stories, and curator insights with their updates.</p>
         </div>
       </div>
     </div>

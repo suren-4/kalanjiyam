@@ -242,17 +242,22 @@
 }
 
 .benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 2rem 0;
+  flex-wrap: nowrap;
 }
 
 .benefit-card {
-  background: white;
-  border-radius: 12px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 200px;
+  max-width: 300px;
 }
 
 .benefit-card:hover {
@@ -318,12 +323,12 @@
   }
   
   .benefits-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
-  .membership-benefits {
-    padding: 0 1rem;
+  .benefit-card {
+    flex: 0 1 100%;
   }
   
   .faq-item h3 {
@@ -465,11 +470,42 @@
   }
 }
 
-/* Ensure the benefits section looks good on all screens */
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+/* Ensure the body allows scrolling */
+body {
+  overflow-y: auto;
+}
+
+/* Fix for iOS Safari */
+html, body {
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+
+/* Remove the FAQ section */
+.membership-faq {
+  display: none;
+}
+
+/* Adjust spacing since we removed the FAQ */
+.membership-benefits {
+  margin-bottom: 2rem;
+}
+
+/* Make sure the container has proper padding at the bottom */
+.membership-container {
+  padding-bottom: 4rem;
+}
+
+/* Add responsive handling for smaller screens */
+@media (max-width: 1024px) {
+  .benefits-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .benefit-card {
+    flex: 0 1 calc(50% - 20px);
+  }
 }
 
 /* Improve button accessibility */
@@ -572,28 +608,53 @@
   cursor: not-allowed;
 }
 
-/* Ensure the body allows scrolling */
+/* Add these styles for custom scrollbar */
+
+/* For Webkit browsers (Chrome, Safari, newer versions of Opera) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f2ed;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B6B4E;
+  border-radius: 10px;
+  border: 2px solid #f5f2ed;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a07a59;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #8B6B4E #f5f2ed;
+}
+
+/* For Edge and IE */
 body {
-  overflow-y: auto;
+  -ms-overflow-style: none;
 }
 
-/* Fix for iOS Safari */
-html, body {
-  -webkit-overflow-scrolling: touch;
-  height: 100%;
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Remove the FAQ section */
-.membership-faq {
-  display: none;
-}
+/* Make sure the scrollbar is visible on mobile devices */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
 
-/* Adjust spacing since we removed the FAQ */
-.membership-benefits {
-  margin-bottom: 2rem;
-}
-
-/* Make sure the container has proper padding at the bottom */
-.membership-container {
-  padding-bottom: 4rem;
+  ::-webkit-scrollbar-thumb {
+    border-width: 1px;
+  }
 } 
