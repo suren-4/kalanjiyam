@@ -1,46 +1,62 @@
 import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { processSRCNN } from '../../services/imageProcessing';
 import './UploadModal.css';
 
 const UploadModal = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const [isUploading, setIsUploading] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
 
-  const handleUploadWithProcessing = () => {
-    fileInputRef.current.click();
-  };
-
-  const handleFileupload = async(event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    setIsUploading(true);
+  const uploadToCloudinary = async (file) => {
     const data = new FormData();
     data.append("file", file);
     data.append("upload_preset", "kalanjiyam");
     data.append("cloud_name", "dyggpacf1");
 
-    try {
-        const res = await fetch("https://api.cloudinary.com/v1_1/dyggpacf1/image/upload", {
-            method: "POST",
-            body: data
-        });
+    const res = await fetch("https://api.cloudinary.com/v1_1/dyggpacf1/image/upload", {
+      method: "POST",
+      body: data
+    });
 
-        const uploadedImageUrl = await res.json();
-        console.log(uploadedImageUrl.url);
-        navigate('/uploadpage', { state: { imageUrl: uploadedImageUrl.url } });
+    return await res.json();
+  };
+
+  const handleFileUpload = async (event, shouldProcess = false) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    try {
+      setIsUploading(true);
+      let fileToUpload = file;
+
+      if (shouldProcess) {
+        setIsProcessing(true);
+        fileToUpload = await processSRCNN(file);
+        setIsProcessing(false);
+      }
+
+      const uploadedImage = await uploadToCloudinary(fileToUpload);
+      navigate('/uploadpage', { state: { imageUrl: uploadedImage.url } });
 
     } catch (error) {
-        console.error("Error uploading file:", error);
-        alert('Error uploading file. Please try again.');
+      console.error("Error:", error);
+      alert('Error processing/uploading file. Please try again.');
     } finally {
-        setIsUploading(false);
+      setIsUploading(false);
+      setIsProcessing(false);
     }
+  };
+
+  const handleUploadWithProcessing = () => {
+    fileInputRef.current.click();
+    fileInputRef.current.onchange = (e) => handleFileUpload(e, true);
   };
 
   const handleUploadWithoutProcessing = () => {
     fileInputRef.current.click();
+    fileInputRef.current.onchange = (e) => handleFileUpload(e, false);
   };
 
   if (!isOpen) return null;
@@ -60,14 +76,13 @@ const UploadModal = ({ isOpen, onClose }) => {
             type="file"
             ref={fileInputRef}
             style={{ display: 'none' }}
-            onChange={handleFileupload}
             accept="image/*"
           />
           
           <button 
             className="upload-option-btn"
             onClick={handleUploadWithoutProcessing}
-            disabled={isUploading}
+            disabled={isUploading || isProcessing}
           >
             <i className="fas fa-file-upload"></i>
             <span>{isUploading ? 'Uploading...' : 'Upload Without Processing'}</span>
@@ -77,11 +92,15 @@ const UploadModal = ({ isOpen, onClose }) => {
           <button 
             className="upload-option-btn"
             onClick={handleUploadWithProcessing}
-            disabled={isUploading}
+            disabled={isUploading || isProcessing}
           >
             <i className="fas fa-magic"></i>
-            <span>{isUploading ? 'Uploading...' : 'Upload With Processing'}</span>
-            <p>Enhanced upload with image processing</p>
+            <span>
+              {isProcessing ? 'Processing...' : 
+               isUploading ? 'Uploading...' : 
+               'Upload With SRCNN Processing'}
+            </span>
+            <p>Enhanced upload with SRCNN image upscaling</p>
           </button>
         </div>
       </div>

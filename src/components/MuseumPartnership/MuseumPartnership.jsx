@@ -99,31 +99,6 @@ const MuseumPartnership = () => {
         ))}
       </div>
       
-      <div className="business-model-section">
-        <h2>Our Business Model</h2>
-        <div className="business-model-cards">
-          <div className="model-card">
-            <div className="model-icon">🤝</div>
-            <h3>Museum Partnerships</h3>
-            <p>We partner with museums and cultural institutions to promote their collections and increase visitor traffic.</p>
-          </div>
-          <div className="model-card">
-            <div className="model-icon">🎫</div>
-            <h3>Ticket Commissions</h3>
-            <p>We earn a 10-15% commission on each ticket sold through our platform, creating a sustainable revenue stream.</p>
-          </div>
-          <div className="model-card">
-            <div className="model-icon">📱</div>
-            <h3>Enhanced Visitor Experience</h3>
-            <p>Visitors can learn about artifacts online, then see them in person with contextual information from our platform.</p>
-          </div>
-          <div className="model-card">
-            <div className="model-icon">📊</div>
-            <h3>Data Insights</h3>
-            <p>We provide museums with valuable data on visitor interests and preferences to help improve their exhibitions.</p>
-          </div>
-        </div>
-      </div>
       
       <div className="partnership-benefits">
         <h2>Why Book Through Kalanjiyam?</h2>
@@ -138,11 +113,7 @@ const MuseumPartnership = () => {
             <h3>Exclusive Discounts</h3>
             <p>Enjoy special rates available only to Kalanjiyam members.</p>
           </div>
-          <div className="benefit-card">
-            <div className="benefit-icon">🔍</div>
-            <h3>Guided Tours</h3>
-            <p>Book expert-led tours focused on the artifacts you discovered on our platform.</p>
-          </div>
+         
           <div className="benefit-card">
             <div className="benefit-icon">📱</div>
             <h3>Mobile Tickets</h3>
@@ -151,16 +122,7 @@ const MuseumPartnership = () => {
         </div>
       </div>
       
-      <div className="become-partner">
-        <h2>Own a Museum or Cultural Institution?</h2>
-        <p>Partner with Kalanjiyam to increase visibility and ticket sales for your institution.</p>
-        <button 
-          className="partner-button"
-          onClick={handlePartnerApplication}
-        >
-          Become a Partner
-        </button>
-      </div>
+      
     </div>
   );
 };

@@ -113,11 +113,14 @@ const Explorepage = () => {
     ));
   };
 
+  const handleBack = () => {
+    navigate('/');
+  };
+
   return (
     <div className="gallery-container">
-      <ArrowButton onClick={() => navigate(-1)} />
-      
       <div className="gallery-header">
+        <ArrowButton onClick={handleBack} />
         <h2>Explore Artifacts</h2>
       </div>
       
@@ -126,7 +129,7 @@ const Explorepage = () => {
           <input
             type="text"
             className="search-input"
-            placeholder="Search by title, material, period, location..."
+            placeholder="Search by title, material, period..."
             value={searchTerm}
             onChange={handleSearch}
           />

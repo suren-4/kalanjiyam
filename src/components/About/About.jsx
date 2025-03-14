@@ -14,8 +14,8 @@ const About = () => {
         <div className="about-left">
           <h1>
             Preserving heritage<br />
-            through the power of<br />
-            <span className="highlight">digital innovation.</span>
+            through the use of <br />
+            digital innovation<br/>
           </h1>
           <p>
             Cultural heritage is the future of preservation in this digital-focused world. 

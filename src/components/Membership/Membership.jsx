@@ -38,11 +38,13 @@ const Membership = () => {
       duration: "/year",
       features: [
       
-        "Instant artifact feed access",
+        
         "Monthly curated collections",
-        "10% discount at museum shop",
+        
         "Quarterly newsletter subscription",
-        "Live sessions with the Archaelogist"
+        "Live sessions with the Archaelogist",
+        "Instant artifact feed access",
+        
       ],
       recommended: false
     },
@@ -52,14 +54,15 @@ const Membership = () => {
       duration: "/year",
       features: [
     
-        "Instant artifact feed access",
+        
         "Exclusive excavatory documentaries",
         "Behind-the-scenes updates",
-        "20% discount at museum shop",
+       
         "Access to exclusive artifact lectures",
         "Live sessions with the Archaelogist",
        
         "Quarterly artifact magazine",
+        "Instant artifact feed access",
       ],
       recommended: true
     }
@@ -155,45 +158,6 @@ const Membership = () => {
             <h3>Instant Access</h3>
             <p>Browse and explore artifacts anytime, anywhere through our mobile-friendly platform.</p>
           </div>
-        </div>
-      </div>
-      
-      <div className="membership-faq">
-        <h2>Frequently Asked Questions</h2>
-        
-        <div className="faq-item">
-          <h3>How soon can I access the artifact feed after subscribing?</h3>
-          <p>Access is instant! As soon as your payment is processed, you'll have immediate access to the artifact feed based on your subscription level.</p>
-        </div>
-        
-        <div className="faq-item">
-          <h3>What's the difference between Basic and Heritage memberships?</h3>
-          <p>While both plans include instant artifact feed access, Heritage Patrons get additional benefits like exclusive content, curator-led tours, behind-the-scenes updates, and special event access.</p>
-        </div>
-        
-        <div className="faq-item">
-          <h3>How will my membership fee be used?</h3>
-          <p>Your membership supports our ongoing efforts to document, digitize, and preserve archaeological artifacts. Funds are used for equipment, storage, research, and maintaining our digital platform.</p>
-        </div>
-        
-        <div className="faq-item">
-          <h3>Can I upgrade my membership?</h3>
-          <p>Yes, you can upgrade your membership at any time. The price difference will be prorated based on your current subscription period.</p>
-        </div>
-        
-        <div className="faq-item">
-          <h3>Is there a refund policy?</h3>
-          <p>We offer a 14-day money-back guarantee if you're not satisfied with your membership. After that period, we do not provide refunds for canceled memberships.</p>
-        </div>
-        
-        <div className="faq-item">
-          <h3>Do you offer discounts for students?</h3>
-          <p>Yes, we offer a 30% discount for students with valid ID. Please contact our support team to verify your student status and receive your discount code.</p>
-        </div>
-        
-        <div className="faq-item">
-          <h3>How does the artifact feed work?</h3>
-          <p>All members get instant access to our artifact feed with real-time updates. Heritage Patrons additionally receive exclusive content, behind-the-scenes stories, and curator insights with their updates.</p>
         </div>
       </div>
     </div>

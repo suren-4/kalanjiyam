@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -11,6 +11,8 @@ import ArtifactDetailPage from './components/Artifactdetails/ArtifactDetailPage'
 import LocationPage from './components/LocationPage/LocationPage';
 import Membership from './components/Membership/Membership';
 import MuseumPartnership from './components/MuseumPartnership/MuseumPartnership';
+import Chatbot from './components/Chatbot/Chatbot';
+import LoadingAnimation from './components/LoadingAnimation/LoadingAnimation';
 
 // Simplified BookingConfirmation component
 const BookingConfirmation = () => {
@@ -125,22 +127,41 @@ const BookingConfirmation = () => {
 };
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/uploadpage" element={<UploadPage />} />
-        <Route path="/explore" element={<Explorepage />} />
-        <Route path="/artifact/:id" element={<ArtifactDetailPage />} />
-        <Route path="/location/:location" element={<LocationPage />} />
-        <Route path="/membership" element={<Membership />} />
-        <Route path="/museums" element={<MuseumPartnership />} />
-        <Route path="/booking-confirmation" element={<BookingConfirmation />} />
-      </Routes>
-    </Router>
+    <>
+      {loading ? (
+        <LoadingAnimation onComplete={() => setLoading(false)} />
+      ) : (
+        <Router>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/uploadpage" element={<UploadPage />} />
+            <Route path="/explore" element={<Explorepage />} />
+            <Route path="/artifact/:id" element={<ArtifactDetailPage />} />
+            <Route path="/location/:location" element={<LocationPage />} />
+            <Route path="/membership" element={<Membership />} />
+            <Route path="/museums" element={<MuseumPartnership />} />
+            <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+          </Routes>
+          
+          {/* Conditionally render Chatbot based on current path */}
+          <Routes>
+            <Route path="/" element={<Chatbot />} />
+            <Route path="/about" element={<Chatbot />} />
+            <Route path="/explore" element={<Chatbot />} />
+            <Route path="/artifact/:id" element={<Chatbot />} />
+            <Route path="/location/:location" element={<Chatbot />} />
+            <Route path="/membership" element={<Chatbot />} />
+            <Route path="/museums" element={<Chatbot />} />
+          </Routes>
+        </Router>
+      )}
+    </>
   );
 }
 
