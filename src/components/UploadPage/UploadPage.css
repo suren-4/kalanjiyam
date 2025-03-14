@@ -512,3 +512,45 @@
   animation: formGroupFadeIn 0.3s ease forwards;
   animation-delay: calc(var(--index, 0) * 0.05s);
 }
+
+.csv-upload-section {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.csv-upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--primary-color);
+  color: var(--white);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(139, 107, 78, 0.2);
+}
+
+.csv-upload-label:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(139, 107, 78, 0.3);
+}
+
+.csv-upload-label i {
+  font-size: 1.2rem;
+}
+
+.csv-success {
+  margin-top: 10px;
+  color: #4CAF50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.csv-success i {
+  font-size: 1.1rem;
+}

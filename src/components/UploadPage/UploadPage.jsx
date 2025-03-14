@@ -3,6 +3,8 @@ import './UploadPage.css';
 import { supabase } from '../../config/supabase';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Papa from 'papaparse';
+import { generateCsvTemplate } from './csvTemplate';
 
 const UploadPage = () => {
   const location = useLocation();
@@ -27,6 +29,7 @@ const UploadPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+  const [csvData, setCsvData] = useState(null);
 
   const resource_types = [
     "Artifacts",
@@ -142,6 +145,43 @@ const UploadPage = () => {
     }
   };
 
+  const handleCsvUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      Papa.parse(file, {
+        complete: (results) => {
+          const data = results.data[0]; // Assuming first row contains the data
+          
+          // Map CSV data to form fields
+          setFormData({
+            title: data[0] || '',
+            description: data[1] || '',
+            date: data[2] || '',
+            location: data[3] || '',
+            resource_type: data[4] || '',
+            material: data[5] || '',
+            period_era: data[6] || '',
+            language: data[7] || '',
+            current_location: data[8] || '',
+            excavator: data[9] || '',
+            reference_doc: data[10] || '',
+            image_url: imageUrl // Keep existing image URL
+          });
+          
+          setCsvData(data);
+        },
+        error: (error) => {
+          console.error('Error parsing CSV:', error);
+          setError('Error parsing CSV file');
+        }
+      });
+    }
+  };
+
+  const downloadTemplate = () => {
+    generateCsvTemplate();
+  };
+
   return (
     <div className="page-container">
       <div className="image-container">
@@ -158,6 +198,26 @@ const UploadPage = () => {
       <div className="upload-container">
         <div className="header">
           <h1>Upload New Item</h1>
+          
+          <div className="csv-upload-section">
+            <label htmlFor="csvUpload" className="csv-upload-label">
+              <i className="fas fa-file-csv"></i>
+              Upload Draft CSV
+            </label>
+            <input
+              type="file"
+              id="csvUpload"
+              accept=".csv"
+              onChange={handleCsvUpload}
+              style={{ display: 'none' }}
+            />
+            {csvData && (
+              <div className="csv-success">
+                <i className="fas fa-check"></i>
+                Draft data loaded
+              </div>
+            )}
+          </div>
         </div>
         
         {error && (
